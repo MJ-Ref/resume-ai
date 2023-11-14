@@ -1,4 +1,3 @@
-```markdown
 # Resume AI
 
 Resume AI is an application that leverages artificial intelligence to generate custom resumes and cover letters based on the user's professional history and the job they are applying for. It uses technologies like OpenAI, Supabase, LlamaIndex, Langchain, PostgreSQL, React.js, Node.js, Express.js, Docker, Jest, and GitHub Actions.
@@ -27,7 +26,10 @@ These instructions will get you a copy of the project up and running on your loc
 1. Clone the repository
 
 ```bash
-git clone https://github.com/MJ-Ref/resume-ai.git cd resume-ai ``` 2. Install NPM packages
+git clone https://github.com/MJ-Ref/resume-ai.git
+cd resume-ai
+```
+2. Install NPM packages
 
 ```bash
 npm install
@@ -94,4 +96,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - Hat tip to anyone whose code was used
 - Inspiration
 - etc
-```

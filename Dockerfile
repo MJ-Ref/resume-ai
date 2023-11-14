@@ -1,8 +1,9 @@
-```Dockerfile
 # Use an official Node.js runtime as the base image
 FROM node:14
 
 # Set the working directory in the container to /app
+WORKDIR /app
+WORKDIR /app
 WORKDIR /app
 
 # Copy package.json and package-lock.json into the working directory
@@ -19,4 +20,3 @@ EXPOSE 8080
 
 # Define the command to run the app
 CMD [ "node", "server.js" ]
-```

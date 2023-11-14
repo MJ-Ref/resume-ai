@@ -1,4 +1,4 @@
-```javascript
+javascript
 const express = require('express');
 const router = express.Router();
 const { supabase, pool } = require('../database.js');
@@ -63,4 +63,4 @@ router.post('/generate', async (req, res) => {
 });
 
 module.exports = router;
-```
+

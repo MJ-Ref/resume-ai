@@ -1,4 +1,4 @@
-```javascript
+javascript
 const { createClient } = require('@supabase/supabase-js');
 const { Pool } = require('pg');
 
@@ -30,4 +30,4 @@ module.exports = {
   supabase,
   pool,
 };
-```
+

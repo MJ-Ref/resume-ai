@@ -1,4 +1,4 @@
-```javascript
+javascript
 const { DataTypes } = require('sequelize');
 const { pool } = require('./database.js');
 
@@ -41,4 +41,4 @@ const Job = pool.define('Job', {
 Job.sync({ alter: true });
 
 module.exports = Job;
-```
+

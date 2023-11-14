@@ -1,4 +1,4 @@
-```javascript
+javascript
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -47,4 +47,4 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
-```
+
