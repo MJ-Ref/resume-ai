@@ -1,4 +1,4 @@
-javascript
+
 const { DataTypes } = require('sequelize');
 const { pool } = require('./database.js');
 

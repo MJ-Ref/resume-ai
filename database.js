@@ -1,4 +1,4 @@
-javascript
+
 const { createClient } = require('@supabase/supabase-js');
 const { Pool } = require('pg');
 

@@ -29,6 +29,7 @@ These instructions will get you a copy of the project up and running on your loc
 git clone https://github.com/MJ-Ref/resume-ai.git
 cd resume-ai
 ```
+
 2. Install NPM packages
 
 ```bash
@@ -47,7 +48,7 @@ docker build -t resume-ai .
 docker run -p 8080:8080 resume-ai
 ```
 
-The application should now be running at http://localhost:8080.
+The application should now be running at <http://localhost:8080>.
 
 ## Usage
 
