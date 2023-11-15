@@ -21,9 +21,27 @@ jobs:
 
     - name: Install dependencies
       run: npm ci
+      env:
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+        PG_HOST: ${{ secrets.PG_HOST }}
+        PG_DATABASE: ${{ secrets.PG_DATABASE }}
+        PG_USER: ${{ secrets.PG_USER }}
+        PG_PASSWORD: ${{ secrets.PG_PASSWORD }}
+        PG_PORT: ${{ secrets.PG_PORT }}
 
     - name: Run tests
       run: npm run test
+      env:
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+        PG_HOST: ${{ secrets.PG_HOST }}
+        PG_DATABASE: ${{ secrets.PG_DATABASE }}
+        PG_USER: ${{ secrets.PG_USER }}
+        PG_PASSWORD: ${{ secrets.PG_PASSWORD }}
+        PG_PORT: ${{ secrets.PG_PORT }}
 
     - name: Build Docker image
       run: |
