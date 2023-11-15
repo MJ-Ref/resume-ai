@@ -23,32 +23,23 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installation
 
-1. Clone the repository
-
-```bash
+Clone the repository
 git clone https://github.com/MJ-Ref/resume-ai.git
 cd resume-ai
-```
 
-2. Install NPM packages
-
-```bash
+Install NPM packages
 npm install
-```
 
-3. Build the Docker image
-
-```bash
+Build the Docker image
 docker build -t resume-ai .
-```
 
-4. Run the Docker container
-
-```bash
+Run the Docker container
 docker run -p 8080:8080 resume-ai
-```
 
-The application should now be running at <http://localhost:8080>.
+The application should now be running at http://localhost:8080
+
+Run the tests using Jest
+npm test
 
 ## Usage
 
@@ -62,9 +53,7 @@ The application should now be running at <http://localhost:8080>.
 
 Run the tests using Jest:
 
-```bash
 npm test
-```
 
 ## Deployment
 
