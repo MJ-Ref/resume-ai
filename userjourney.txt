@@ -1,0 +1,19 @@
+1. The user visits the website and is directed to the Sign In/Sign Up page. Here, they enter their email and password, and click on the 'Sign Up' button to create a new account.
+
+2. After signing up, the user is directed to the 'Upload Resume' page. Here, they click on the 'Upload' button and select their resume file from their device. Once the resume is uploaded, the AI begins processing the resume to extract the user's professional history and bio.
+
+3. The user is then directed to the 'AI Interview' page. Here, the AI presents the user with a series of interview questions based on the information extracted from their resume. The user answers these questions, providing additional details about their bio and work history. This information is saved and used as context for future interactions with the AI.
+
+4. Once the interview is complete, the user is directed to the Dashboard. Here, they can start a new job application by clicking on the 'New Application' button.
+
+5. When starting a new job application, the user is asked to upload the job description. They do this by clicking on the 'Upload' button and selecting the job description file from their device.
+
+6. After the job description is uploaded, the user is directed back to the 'AI Interview' page. This time, the AI presents the user with a series of context questions based on the job description. The user answers these questions, providing additional context about the job they are applying for. This information is also saved and used by the AI.
+
+7. With the job description and additional context, the AI uses the information from the user's professional history, bio, and the job description to generate a tailored resume and cover letter. The user can view these documents on the 'Generate Documents' page.
+
+8. The user can then save these documents to their account by clicking on the 'Save' button. The saved documents are added to the list of job applications on the Dashboard.
+
+9. The user can view and download their saved resumes and cover letters at any time from the Dashboard. They can also start new job applications, with the AI using the saved context to generate tailored resumes and cover letters for each new job.
+
+This updated narrative includes an additional AI interview step after the job description is uploaded, allowing the AI to gather more context about the job and utilize this information when generating the resume and cover letter.

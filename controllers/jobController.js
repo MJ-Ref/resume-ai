@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const { supabase, pool } = require('../database.js');
 const { OpenAI } = require('openai');
+const { PromptTemplate } = require('langchain/prompts');
 const openai = new OpenAI(process.env.OPENAI_API_KEY);
 
 // Upload job description
@@ -15,9 +16,16 @@ router.post('/upload', async (req, res) => {
   if (jobResult.error) return res.status(500).json({ error: jobResult.error.message });
 
   // Generate context for the job
+  const contextPromptTemplate = new PromptTemplate({
+    template: "Generate context for the job based on the description: {job_description}",
+    inputVariables: ["job_description"],
+  });
+
+  const contextPrompt = await contextPromptTemplate.format({ job_description: jobDescription });
+
   const contextResult = await openai.complete({
     engine: 'davinci-codex',
-    prompt: `Generate context for the job based on the description: ${jobDescription}`,
+    prompt: contextPrompt,
     max_tokens: 200
   });
 
@@ -54,4 +62,3 @@ router.get('/:id', async (req, res) => {
 });
 
 module.exports = router;
-

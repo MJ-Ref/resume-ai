@@ -1,8 +1,8 @@
-
 const express = require('express');
 const router = express.Router();
 const { supabase, pool } = require('../database.js');
 const { OpenAI } = require('openai');
+const { PromptTemplate } = require('langchain/prompts');
 
 // Initialize OpenAI
 const openai = new OpenAI(process.env.OPENAI_KEY);
@@ -46,13 +46,23 @@ router.post('/generate', async (req, res) => {
   if (userError || jobError) return res.status(500).json({ error: userError || jobError });
 
   // Generate a tailored resume and cover letter using OpenAI
-  const resumePrompt = `Generate a resume based on the following professional history: ${user[0].professional_history}`;
-  const coverLetterPrompt = `Generate a cover letter for the following job description: ${job[0].description}`;
+  const resumePromptTemplate = new PromptTemplate({
+    template: "Generate a resume based on the following professional history: {professional_history} for the job description: {job_description} and company context: {company_context}",
+    inputVariables: ["professional_history", "job_description", "company_context"],
+  });
+  
+  const coverLetterPromptTemplate = new PromptTemplate({
+    template: "Generate a cover letter based on the following professional history: {professional_history} for the job description: {job_description} and company context: {company_context}",
+    inputVariables: ["professional_history", "job_description", "company_context"],
+  });
+  
+  const resumePrompt = await resumePromptTemplate.format({ professional_history: user[0].professional_history, job_description: job[0].description, company_context: job[0].company_context });
+  const coverLetterPrompt = await coverLetterPromptTemplate.format({ professional_history: user[0].professional_history, job_description: job[0].description, company_context: job[0].company_context });
 
   const resumeResponse = await openai.complete({
     engine: 'gpt-4',
     prompt: resumePrompt,
-    max_tokens: 500,
+    max_tokens: 300,
   });
 
   const coverLetterResponse = await openai.complete({
@@ -78,4 +88,4 @@ router.post('/generate', async (req, res) => {
   return res.status(200).json({ resume: resumeData[0], coverLetter: coverLetterData[0] });
 });
 
-module.exports = router
+module.exports = router;
