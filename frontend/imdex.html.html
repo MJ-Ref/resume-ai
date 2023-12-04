@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Your Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="container mx-auto p-4">
+        <div class="flex justify-center items-center h-screen">
+            <div class="bg-white rounded-lg p-4 shadow-lg">
+                <h2 class="text-2xl font-bold mb-4 text-center">Upload Your Resume</h2>
+                <form id="uploadForm" class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                    <input type="file" id="resumeInput" class="hidden" accept=".pdf,.doc,.docx"/>
+                    <label for="resumeInput" class="cursor-pointer">
+                        <p class="text-lg text-gray-700">Drag and drop your resume here</p>
+                        <p class="text-sm text-gray-500">or</p>
+                        <p class="text-blue-500 underline">Browse files</p>
+                    </label>
+                </form>
+                <div class="text-center mt-4">
+                    <button onclick="submitResume()" class="px-4 py-2 bg-blue-500 text-white rounded-lg">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitResume() {
+            // You can handle file submission here
+            // For now, it will just redirect to your chat interface page
+            window.location.href = 'chat_interface_page.html'; // replace with your actual chat interface page URL
+        }
+
+        // Optional: Add JavaScript to enhance drag and drop functionality
+    </script>
+</body>
+</html>

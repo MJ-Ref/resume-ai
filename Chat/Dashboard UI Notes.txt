@@ -1,0 +1,36 @@
+1. Timeline Animation:
+
+The top of the page should feature a dynamic timeline that represents the user's educational and professional milestones.
+
+- Use the Flex component from Chakra UI to create a horizontal timeline. Each milestone (graduation, job position) will be a node on this timeline.
+- For each node, use the Box component to create a container. Inside this container, place an Image component for the logo of the school or workplace, and a Text component for the date and description of the milestone.
+- To animate the timeline, consider using a library like Framer Motion or React Spring. The animation should show the timeline being populated from left to right, with each node appearing in chronological order.
+- The timeline should be responsive, adjusting its layout based on the viewport size. Use Tailwind CSS's responsive design utilities to achieve this.
+2. Chat Interface:
+
+On the left side of the screen, below the timeline, create a chat interface where the AI will interact with the user.
+
+- Use the Box component to create a container for the chat interface. Inside this container, use the VStack component to stack chat messages vertically.
+- Each chat message can be a Box with a Text component inside. Use different background colors or other visual cues to distinguish between user messages and AI messages.
+- Include an indicator (like an arrow or a line) that connects the current chat topic to the corresponding node on the timeline. This can be a Divider component that is rotated and positioned appropriately.
+3. Summary Cards:
+
+On the right side of the screen, display cards that summarize the chat interactions.
+
+- Use the Box component to create a container for the summary cards. Inside this container, use the VStack component to stack cards vertically.
+- Each card can be a Box with a Text component for the summary and two Button components for the 'Approve' and 'Edit' actions.
+- Limit the text in each card to a few sentences for readability. When a card gets too long, create a new card. Use JavaScript to count the sentences or words and control this behavior.
+4. Navigation and Progression:
+
+Include a navigation button that allows the user to move on to the next topic in the interview process.
+
+- Use the Button component to create a 'Next' button at the bottom of the chat interface. The button's label should dynamically update to indicate the next node (e.g., 'Move on to XYZ').
+- When the user clicks the 'Next' button, the chat interface and the summary cards should update to reflect the new topic. Use React's state and effect hooks to manage this behavior.
+5. Tabbed Interface for Nodes:
+
+As the user progresses through the timeline, organize the summary cards into tabs labeled with the node's name.
+
+- Use the Tabs component from Chakra UI to create a tabbed interface for the summary cards. Each tab should correspond to a node on the timeline.
+- When the user moves on to a new node, create a new tab and start populating it with summary cards. The previously active tab should remain accessible, allowing the user to review past summaries.
+
+Remember to use Chakra UI's theme and style props, along with Tailwind CSS's utility classes, to style these components according to the design requirements. Also, ensure that the interface is accessible and responsive, providing a good user experience on all devices.

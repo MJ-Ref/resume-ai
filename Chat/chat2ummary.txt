@@ -1,0 +1,47 @@
+The conversation in Chat 12-2-23-2-Cursor.txt outlines the steps needed to implement a new workflow for the application, which includes user authentication, resume upload and processing, AI interviews, document generation, and document management. It also discusses the need to create or modify front-end components and back-end endpoints, as well as considerations for database schema, AI integration, state management, and error handling.
+
+Based on the conversation and the codebase review we have conducted so far, here are the areas that need attention and the corresponding actions to take:
+
+1. Front-End Components:
+- Sign In/Sign Up Page: Verify or create components for user authentication.
+- Upload Resume Page: Implement the UI for resume upload and connect it to the back-end endpoint.
+- AI Interview Page: Develop a dynamic page to display AI-generated interview questions and capture user responses.
+- Dashboard: Create or update the Dashboard component to manage job applications and view saved documents.
+- New Application Page: Design the UI for starting a new job application and uploading job descriptions.
+- Generate Documents Page: Construct the page where users can view and save AI-generated resumes and cover letters.
+
+2. Back-End Endpoints:
+- Authentication Endpoints: Ensure authController.js handles user sign-up and sign-in.
+- Resume Upload Endpoint: Create or update the endpoint in aiController.js for resume upload and processing.
+- Interview Questions Endpoint: Confirm the existence of an endpoint to generate and serve AI-powered interview questions.
+- Save Interview Responses Endpoint: Implement an endpoint to save user responses from the AI interview.
+- Job Description Upload Endpoint: Establish an endpoint for job description upload and processing.
+- Context Questions Endpoint: Verify or create an endpoint to generate and serve context questions based on the job description.
+- Document Generation Endpoint: Ensure there is an endpoint to generate tailored resumes and cover letters using all collected data.
+- Save Documents Endpoint: Implement an endpoint to save generated documents to the user's account.
+
+3. Database Schema:
+- Update the database schema to include tables for storing user accounts, resumes, interview responses, job descriptions, context questions responses, and generated documents.
+
+4. AI Integration:
+- Integrate AI services for processing resumes, generating interview questions, and creating tailored resumes and cover letters.
+
+5. State Management:
+- Implement or refine state management on the front-end to ensure a seamless user experience.
+
+6. Error Handling:
+- Enhance error handling on both the front-end and back-end to provide clear feedback to the user.
+
+7. Testing and Validation:
+- Write tests for new endpoints and modify existing tests as needed.
+- Validate the entire workflow from the front-end to the back-end.
+
+8. Documentation:
+- Update README.md and any other relevant documentation to reflect the new features and workflow.
+
+9. Code Examples:
+- Review the provided code examples for the timeline component and integrate them into the application if they are part of the MVP.
+
+To align the existing codebase with the new workflow requirements, we need to review the current functionality and identify where changes or additions are needed. We should proceed with the implementation of the new endpoint for resume upload and processing as outlined in the conversation, and then continue with the development and integration of the front-end components and back-end endpoints.
+
+If you would like to proceed with a specific task or need further assistance with any of the steps mentioned, please let me know, and I can provide the necessary guidance or code snippets.

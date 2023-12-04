@@ -1,13 +1,13 @@
-
 const express = require('express');
 const router = express.Router();
 const { supabase, pool } = require('../database.js');
-const { LlamaIndex } = require('llamaindex');
-const { Langchain } = require('langchain');
+const LlamaIndex = require('llamaindex'); // Updated import to use the npm package
+const { OpenAI } = require('langchain/llms/openai'); // Updated import path
 
 // Initialize LlamaIndex and Langchain
-const llamaIndex = new LlamaIndex();
-const langchain = new Langchain();
+const llamaIndex = LlamaIndex;
+console.log(process.env.OPENAI_KEY); // Log the OPENAI_KEY environment variable
+const langchain = new OpenAI(process.env.OPENAI_KEY);
 
 // Upload and process resume
 router.post('/upload', async (req, res) => {
@@ -74,4 +74,3 @@ router.post('/generate', async (req, res) => {
 });
 
 module.exports = router;
-

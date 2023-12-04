@@ -1,81 +1,60 @@
 # Resume AI
 
-Resume AI is an application that leverages artificial intelligence to generate custom resumes and cover letters based on the user's professional history and the job they are applying for. It uses technologies like OpenAI, Supabase, LlamaIndex, Langchain, PostgreSQL, React.js, Node.js, Express.js, Docker, Jest, and GitHub Actions.
+Resume AI is an advanced application that utilizes artificial intelligence to assist users in creating custom resumes and cover letters tailored to their professional history and targeted job descriptions. The application is built on a robust stack that includes OpenAI for natural language processing, Supabase for backend services, LlamaIndex for data extraction, Langchain for language model chaining, PostgreSQL for database management, React.js for the frontend, Node.js and Express.js for the backend, Docker for containerization, Jest for testing, and GitHub Actions for CI/CD workflows.
 
-## Features
+## Application Architecture
 
-- User authentication
-- Resume upload and processing
-- AI-powered interview
-- Job description upload and processing
-- AI-powered resume and cover letter generation
-- Job tracking and document export
+### Frontend
 
-## Getting Started
+The frontend of Resume AI is developed using React.js and Chakra UI, providing a responsive and accessible user interface. The application includes the following key components:
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+- **Authentication Pages**: Utilize Chakra UI components to create a seamless sign-in and sign-up experience, with state management handled by React Context or Redux for session persistence.
+- **Resume Upload Page**: A drag-and-drop interface allows users to upload their resumes, which are then processed using LlamaIndex for data extraction.
+- **AI Interview Page**: Interactive chat interface powered by OpenAI's GPT models to conduct interviews and generate summaries based on the user's professional history.
+- **Dashboard**: A central hub for users to track job applications, view saved documents, and access AI-generated content.
+- **New Application Page**: Interface for uploading job descriptions and initiating AI-powered context interviews.
+- **Generate Documents Page**: Users can review and save AI-generated resumes and cover letters, which are created using a combination of OpenAI and custom algorithms.
 
-### Prerequisites
+### Backend
 
-- Node.js
-- Docker
-- PostgreSQL
+The backend is built with Node.js and Express.js, providing RESTful APIs that interact with the PostgreSQL database and AI services:
 
-### Installation
+- **Authentication Endpoints**: Handle user registration, login, and session management securely.
+- **Resume Processing Endpoint**: Integrates LlamaIndex for extracting data from uploaded resumes and stores the information in the database.
+- **AI Interview Endpoints**: Leverage OpenAI to generate interview questions and summaries, and store user responses for further processing.
+- **Document Generation Endpoint**: Combines user data with AI services to create personalized resumes and cover letters.
 
-Clone the repository
-git clone https://github.com/MJ-Ref/resume-ai.git
-cd resume-ai
+### AI Integration
 
-Install NPM packages
-npm install
+- **Pydantic Models**: Define data structures for consistent and validated data handling across the application.
+- **OpenAI**: Generate interview questions and content for resumes and cover letters using GPT models.
+- **LlamaIndex**: Extract key information from resumes to feed into the AI interview process.
 
-Build the Docker image
-docker build -t resume-ai .
+## Development Roadmap
 
-Run the Docker container
-docker run -p 8080:8080 resume-ai
+1. **Setup and Configuration**: Establish the development environment, including Node.js, Docker, and PostgreSQL setup.
+2. **Frontend Development**: Implement Chakra UI components and state management for the user interface.
+3. **Backend Services**: Develop Express.js endpoints for user authentication, data processing, and AI integration.
+4. **AI Services Integration**: Integrate Pydantic, OpenAI, and LlamaIndex for data modeling, content generation, and resume processing.
+5. **Database Schema Design**: Update the PostgreSQL schema to support new data models and relationships.
+6. **State Management and Error Handling**: Refine state management on the frontend and enhance error handling across the application.
+7. **Testing and Validation**: Write and run Jest tests for all endpoints and components, ensuring reliability and stability.
+8. **Documentation**: Update documentation, including README.md, to reflect the latest application features and architecture.
+9. **Deployment**: Configure GitHub Actions for CI/CD pipelines to automate testing and deployment processes.
 
-The application should now be running at http://localhost:8080
+## Technologies Used
 
-Run the tests using Jest
-npm test
-
-## Usage
-
-1. Sign up or sign in to the application.
-2. Upload your resume and answer the AI-powered interview questions.
-3. Upload a job description and answer the AI-powered context questions.
-4. Generate a tailored resume and cover letter.
-5. Track your job applications and export your documents.
-
-## Running the tests
-
-Run the tests using Jest:
-
-npm test
-
-## Deployment
-
-This application uses GitHub Actions for continuous integration and continuous deployment. Pushes to the main branch will trigger a build and deployment process.
-
-## Built With
-
-- [OpenAI](https://openai.com/)
-- [Supabase](https://supabase.io/)
-- [LlamaIndex](https://llamaindex.com/)
-- [Langchain](https://langchain.io/)
-- [PostgreSQL](https://www.postgresql.org/)
-- [React.js](https://reactjs.org/)
-- [Node.js](https://nodejs.org/)
-- [Express.js](https://expressjs.com/)
-- [Docker](https://www.docker.com/)
-- [Jest](https://jestjs.io/)
-- [GitHub Actions](https://github.com/features/actions)
+- **Frontend**: [React.js](https://reactjs.org/), [Chakra UI](https://chakra-ui.com/), [Redux](https://redux.js.org/)/[React Context](https://reactjs.org/docs/context.html)
+- **Backend**: [Node.js](https://nodejs.org/), [Express.js](https://expressjs.com/), [Supabase](https://supabase.io/)
+- **AI Services**: [OpenAI](https://openai.com/), [LlamaIndex](https://llamaindex.com/), [Langchain](https://langchain.io/)
+- **Database**: [PostgreSQL](https://www.postgresql.org/)
+- **Containerization**: [Docker](https://www.docker.com/)
+- **Testing**: [Jest](https://jestjs.io/)
+- **CI/CD**: [GitHub Actions](https://github.com/features/actions)
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+We welcome contributions to Resume AI. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
 ## License
 

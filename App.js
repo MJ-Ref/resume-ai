@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Auth from './components/Auth';
@@ -8,6 +7,7 @@ import UploadJob from './components/UploadJob';
 import AIInterview from './components/AIInterview';
 import GenerateResume from './components/GenerateResume';
 import ViewJobs from './components/ViewJobs';
+import InterviewPage from './components/InterviewPage';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -38,6 +38,9 @@ function App() {
         </Route>
         <Route path="/view-jobs">
           <ViewJobs user={user} />
+        </Route>
+        <Route path="/interview">
+          <InterviewPage user={user} /> {/* Add the InterviewPage route */}
         </Route>
         <Route path="/">
           <Auth setUser={setUser} />

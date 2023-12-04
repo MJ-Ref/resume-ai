@@ -1,0 +1,43 @@
+Based on the extensive details provided in Chat 12-2-Cursor.txt, several areas of the codebase may need to be updated to align with the new workflow requirements. Here's a breakdown of potential updates:
+
+1. Front-End Components:
+- Sign In/Sign Up Page: Ensure the authentication flow is in place and user sessions are managed correctly.
+- Upload Resume Page: Implement the UI for resume upload and connect it to the back-end endpoint.
+- AI Interview Page: Create a dynamic page to display and handle AI-generated interview questions and user responses.
+- Dashboard: Develop the Dashboard component to manage job applications and view saved documents.
+- New Application Page: Build the UI for uploading job descriptions and initiating the AI context interview.
+- Generate Documents Page: Design the page where users can view and save the AI-generated resume and cover letter.
+
+2. Back-End Endpoints:
+- Authentication Endpoints: Review and possibly update authController.js to handle sign-up and sign-in.
+- Resume Upload Endpoint: Create or update the endpoint in aiController.js or resumeController.js for resume upload and processing.
+- Interview Questions Endpoint: Ensure there is an endpoint to generate and serve AI-powered interview questions.
+- Save Interview Responses Endpoint: Implement an endpoint to save user responses from the AI interview.
+- Job Description Upload Endpoint: Create or update the endpoint for job description upload and processing.
+- Context Questions Endpoint: Ensure there is an endpoint to generate and serve context questions based on the job description.
+- Document Generation Endpoint: Confirm or create an endpoint to generate a tailored resume and cover letter using all collected data.
+- Save Documents Endpoint: Implement an endpoint to save the generated documents to the user's account.
+
+3. Database Schema:
+- Review and update the database schema to include tables for storing user accounts, resumes, interview responses, job descriptions, context questions responses, and generated documents.
+
+4. AI Integration:
+- Integrate AI services for processing resumes, generating interview questions, and creating tailored resumes and cover letters.
+
+5. State Management:
+- Implement or update state management on the front-end to ensure a seamless user experience.
+
+6. Error Handling:
+- Improve error handling on both the front-end and back-end to provide clear feedback to the user.
+
+7. Testing and Validation:
+- Write tests for new endpoints and modify existing tests as needed.
+- Validate the entire workflow from the front-end to the back-end.
+
+8. Documentation:
+- Update README.md and any other relevant documentation to reflect the new features and workflow.
+
+9. Code Examples:
+- Review the provided code examples for the timeline component and integrate them into the application if they are part of the MVP.
+
+To proceed with these updates, you would need to review each component and endpoint in detail, make the necessary changes, and test the application thoroughly to ensure that all new features work as expected. If you would like to start with a specific update or need assistance with a particular task, please let me know, and I can help guide you through the process.
