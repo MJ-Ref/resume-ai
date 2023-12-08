@@ -11,8 +11,8 @@
         <div class="flex justify-center items-center h-screen">
             <div class="bg-white rounded-lg p-4 shadow-lg">
                 <h2 class="text-2xl font-bold mb-4 text-center">Upload Your Resume</h2>
-                <form id="uploadForm" class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
-                    <input type="file" id="resumeInput" class="hidden" accept=".pdf,.doc,.docx"/>
+                <form id="uploadForm" class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center" enctype="multipart/form-data">
+                    <input type="file" id="resumeInput" class="hidden" accept=".pdf,.doc,.docx" onchange="enableUploadButton()"/>
                     <label for="resumeInput" class="cursor-pointer">
                         <p class="text-lg text-gray-700">Drag and drop your resume here</p>
                         <p class="text-sm text-gray-500">or</p>
@@ -20,20 +20,44 @@
                     </label>
                 </form>
                 <div class="text-center mt-4">
-                    <button onclick="submitResume()" class="px-4 py-2 bg-blue-500 text-white rounded-lg">Upload</button>
+                    <button id="uploadButton" onclick="submitResume()" class="px-4 py-2 bg-blue-500 text-white rounded-lg" disabled>Upload</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        function submitResume() {
-            // You can handle file submission here
-            // For now, it will just redirect to your chat interface page
-            window.location.href = 'chat_interface_page.html'; // replace with your actual chat interface page URL
+        function enableUploadButton() {
+            const uploadButton = document.getElementById('uploadButton');
+            uploadButton.disabled = false;
         }
 
-        // Optional: Add JavaScript to enhance drag and drop functionality
+        function submitResume() {
+            const resumeInput = document.getElementById('resumeInput');
+            const file = resumeInput.files[0];
+            if (!file) {
+                alert('Please select a file to upload');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('resumeFile', file);
+
+            fetch('/upload-resume', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // Handle the response data here
+                // For example, you might redirect to the resume validation page
+                // window.location.href = 'resume_validation_page.html'; // replace with your actual resume validation page URL
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
     </script>
 </body>
 </html>
