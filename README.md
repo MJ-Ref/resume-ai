@@ -26,7 +26,7 @@ The backend is built with Node.js and Express.js, providing RESTful APIs that in
 
 ### AI Integration
 
-- **Pydantic Models**: Define data structures for consistent and validated data handling across the application.
+
 - **OpenAI**: Generate interview questions and content for resumes and cover letters using GPT models.
 - **LlamaIndex**: Extract key information from resumes to feed into the AI interview process.
 
