@@ -35,7 +35,7 @@ The backend is built with Node.js and Express.js, providing RESTful APIs that in
 1. **Setup and Configuration**: Establish the development environment, including Node.js, Docker, and PostgreSQL setup.
 2. **Frontend Development**: Implement Chakra UI components and state management for the user interface.
 3. **Backend Services**: Develop Express.js endpoints for user authentication, data processing, and AI integration.
-4. **AI Services Integration**: Integrate Pydantic, OpenAI, and LlamaIndex for data modeling, content generation, and resume processing.
+4. **AI Services Integration**:  OpenAI, and LlamaIndex for data modeling, content generation, and resume processing.
 5. **Database Schema Design**: Update the PostgreSQL schema to support new data models and relationships.
 6. **State Management and Error Handling**: Refine state management on the frontend and enhance error handling across the application.
 7. **Testing and Validation**: Write and run Jest tests for all endpoints and components, ensuring reliability and stability.
